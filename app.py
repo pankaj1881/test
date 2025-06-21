@@ -2,11 +2,11 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods = ["GET"])
 def home():
     return jsonify({"message": "Hello from EC2 Flask API!"})
 
-@app.route('/status')
+@app.route('/status', methods = ["GET"])
 def status():
     return jsonify({"status": "API is running"})
 
